@@ -24,4 +24,4 @@ yarn-error.log*
 
 # credencials
 nuevo.js
-/src/components/
+/src/components/ApiKey*
