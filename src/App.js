@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Formulario } from "./components/Formulario";
 import { Clima } from "./components/Clima";
 import { Error } from "./components/Error";
+import ApiKey from "./components/ApiKey";
 
 function App() {
   // state del formulario
@@ -19,7 +20,8 @@ function App() {
   useEffect(() => {
     const consultarAPI = async () => {
       if (consultar) {
-        const appId = "da1b2b293687420fea212e2b0350f9a4";
+        console.log(ApiKey);
+        const appId = ApiKey.MyKey;
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
 
         const respuesta = await fetch(url);

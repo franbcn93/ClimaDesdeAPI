@@ -84,3 +84,17 @@ input[type="text"]:not(.browser-default):focus:not([readonly]) + label {
 .dropdown-content li > span {
   float: right !important;
 }
+
+.container {
+  width: 95%;
+}
+.col {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+input {
+  padding: 20px;
+  padding-left: 140px;
+  padding-right: 150px;
+}
