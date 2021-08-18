@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # credencials
-/src/components/ApiKey.js
+package.json
+/src/components/
