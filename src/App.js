@@ -21,7 +21,7 @@ function App() {
     const consultarAPI = async () => {
       if (consultar) {
         const appId = ApiKey.myKey;
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+        const url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         console.log(resultado);
