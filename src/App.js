@@ -25,6 +25,7 @@ function App() {
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         console.log(resultado);
+        console.log(respuesta);
 
         guardarResultado(resultado);
         guardarConsultar(false);
