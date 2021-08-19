@@ -1,27 +1,30 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { Header } from "./components/Header";
-import { Formulario } from "./components/Formulario";
+import { Formulario2 } from "./components/Formulario2";
 import { Clima } from "./components/Clima";
 import { Error } from "./components/Error";
 import ApiKey from "./components/ApiKey";
 
-function App() {
+function App2() {
   // state del formulario
   const [busqueda, guardarBusqueda] = useState({
-    ciudad: "",
-    pais: "",
+    latitud: "",
+    longitud: "",
   });
   const [consultar, guardarConsultar] = useState(false);
   const [resultado, guardarResultado] = useState({});
   const [error, guardarError] = useState(false);
 
-  const { ciudad, pais } = busqueda;
+  const { latitud, longitud } = busqueda;
 
   useEffect(() => {
     const consultarAPI = async () => {
       if (consultar) {
         const appId = ApiKey.myKey;
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+        // const lat = "41.52046563697905";
+        // const lon = "2.1504215340059525";
+        const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&appid=${appId}`;
+
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         console.log(resultado);
@@ -53,13 +56,13 @@ function App() {
 
   return (
     <Fragment>
-      <Header titulo="Previsión del tiempo, insertando Ciudad y País" />
+      <Header titulo="Previsión del tiempo, insertando Latitud y Longitud" />
 
       <div className="contenedor-form">
         <div className="container">
           <div className="row">
             <div className="col m6 s12">
-              <Formulario
+              <Formulario2
                 busqueda={busqueda}
                 guardarBusqueda={guardarBusqueda}
                 guardarConsultar={guardarConsultar}
@@ -73,4 +76,4 @@ function App() {
   );
 }
 
-export default App;
+export default App2;

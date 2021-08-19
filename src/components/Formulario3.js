@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { Error } from "./Error";
 import PropTypes from "prop-types";
 
-export const Formulario = ({ busqueda, guardarBusqueda, guardarConsultar }) => {
+export const Formulario3 = ({
+  busqueda,
+  guardarBusqueda,
+  guardarConsultar,
+}) => {
   const [error, guardarError] = useState(false);
 
   // extraer ciudad y pais
-  const { ciudad, pais } = busqueda;
+  const { id } = busqueda;
 
   // función que coloca los elementos en el state
   const handleChange = (e) => {
@@ -22,7 +26,7 @@ export const Formulario = ({ busqueda, guardarBusqueda, guardarConsultar }) => {
     e.preventDefault();
 
     // Validar que no esté vacio
-    if (ciudad.trim() === "" || pais.trim() === "") {
+    if (id.trim() === "") {
       guardarError(true);
       return;
     }
@@ -34,31 +38,18 @@ export const Formulario = ({ busqueda, guardarBusqueda, guardarConsultar }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {error ? <Error mensaje="Ambos campos son obligatorios" /> : null}
+      {error ? <Error mensaje="El Id de la ciudad no es correcta" /> : null}
 
       <div className="input-field col s12">
         <input
           type="text"
-          name="ciudad"
-          id="ciudad"
-          value={ciudad}
+          name="id"
+          id="id"
+          value={id}
           onChange={handleChange}
+          placeholder="Ex: Id Barcelona es  3128760"
         />
-        <label htmlFor="ciudad">Ciudad: </label>
-      </div>
-
-      <div className="input-field col s12">
-        <select name="pais" id="pais" value={pais} onChange={handleChange}>
-          <option value=""> Seleccione un país </option>
-          <option value="DE">Alemania</option>
-          <option value="BE">Belgica</option>
-          <option value="ES">España</option>
-          <option value="FR">Francia</option>
-          <option value="GB">Gran Bretaña</option>
-          <option value="IT">Italia</option>
-          <option value="CH">Suiza</option>
-        </select>
-        <label htmlFor="pais">País: </label>
+        <label htmlFor="ciudad">ID: </label>
       </div>
 
       <div>
@@ -72,7 +63,7 @@ export const Formulario = ({ busqueda, guardarBusqueda, guardarConsultar }) => {
   );
 };
 
-Formulario.propTypes = {
+Formulario3.propTypes = {
   busqueda: PropTypes.object.isRequired,
   guardarBusqueda: PropTypes.func.isRequired,
   guardarConsultar: PropTypes.func.isRequired,

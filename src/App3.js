@@ -1,27 +1,28 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { Header } from "./components/Header";
-import { Formulario } from "./components/Formulario";
-import { Clima } from "./components/Clima";
+import { Formulario3 } from "./components/Formulario3";
+import { Clima3 } from "./components/Clima3";
 import { Error } from "./components/Error";
 import ApiKey from "./components/ApiKey";
 
-function App() {
+function App3() {
   // state del formulario
   const [busqueda, guardarBusqueda] = useState({
-    ciudad: "",
-    pais: "",
+    id: "",
   });
   const [consultar, guardarConsultar] = useState(false);
   const [resultado, guardarResultado] = useState({});
   const [error, guardarError] = useState(false);
 
-  const { ciudad, pais } = busqueda;
+  const { id } = busqueda;
+
+  // Id de Barcelona = 3128760
 
   useEffect(() => {
     const consultarAPI = async () => {
       if (consultar) {
         const appId = ApiKey.myKey;
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+        const url = `http://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=${appId}`;
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         console.log(resultado);
@@ -45,21 +46,21 @@ function App() {
   let componente;
   if (error) {
     componente = (
-      <Error mensaje="No hay resultados. No tenemos registrada una ciudad con ese nombre." />
+      <Error mensaje="No hay resultados. No tenemos registrada una ciudad con ese id." />
     );
   } else {
-    componente = <Clima resultado={resultado} />;
+    componente = <Clima3 resultado={resultado} />;
   }
 
   return (
     <Fragment>
-      <Header titulo="Previsión del tiempo, insertando Ciudad y País" />
+      <Header titulo="Previsión del tiempo de las próximas 24 horas, insertando ID Ciudad" />
 
       <div className="contenedor-form">
         <div className="container">
           <div className="row">
             <div className="col m6 s12">
-              <Formulario
+              <Formulario3
                 busqueda={busqueda}
                 guardarBusqueda={guardarBusqueda}
                 guardarConsultar={guardarConsultar}
@@ -73,4 +74,4 @@ function App() {
   );
 }
 
-export default App;
+export default App3;

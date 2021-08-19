@@ -17,7 +17,6 @@ export const Clima = ({ resultado }) => {
         <p className="temperatura">
           {parseFloat(main.temp - kelvin, 10).toFixed(2)}
           {" ºC "}
-          {/* <span> &#x2103; </span> */}
         </p>
         <p>
           Temperatura Máxima:
