@@ -1,8 +1,9 @@
 # Getting Started with Create React App
 
-[![Watch the video](https://res.cloudinary.com/dfb6ivozp/image/upload/v1629374697/CapturaPantalla_yimybi.png)](https://res.cloudinary.com/dfb6ivozp/video/upload/v1629374765/www_screencapture_com_2021-8-19_13_59_mv9hsz.webm)
-
 Puedes ver una prueba del proyecto [AQUÍ](https://franbcn93.github.io/ClimaDesdeAPI/).
+
+O mejor aún, puedes ver un breve video haciendo click a la imagen
+[![Watch the video](https://res.cloudinary.com/dfb6ivozp/image/upload/v1629374697/CapturaPantalla_yimybi.png)](https://res.cloudinary.com/dfb6ivozp/video/upload/v1629374765/www_screencapture_com_2021-8-19_13_59_mv9hsz.webm)
 
 ## Available Scripts
 
