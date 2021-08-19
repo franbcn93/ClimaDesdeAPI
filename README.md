@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-Puedes ver una prueba del proyecto [AQUÍ](https://wonderful-keller-770be9.netlify.app/).
+[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+
+Puedes ver una prueba del proyecto [AQUÍ](https://franbcn93.github.io/ClimaDesdeAPI/).
 
 ## Available Scripts
 
