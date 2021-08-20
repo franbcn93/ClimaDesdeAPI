@@ -28,6 +28,7 @@ function App() {
         const resultado = await respuesta.json();
         console.log(resultado);
         console.log(respuesta);
+        console.log(resultado.cod);
 
         guardarResultado(resultado);
         guardarConsultar(false);
