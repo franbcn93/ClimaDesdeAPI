@@ -23,7 +23,7 @@ function App2() {
         const appId = ApiKey.myKey;
         // const lat = "41.52046563697905";
         // const lon = "2.1504215340059525";
-        const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&appid=${appId}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&appid=${appId}`;
 
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
